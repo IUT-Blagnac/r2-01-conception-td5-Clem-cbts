@@ -1,0 +1,34 @@
+@startuml Usecase
+left to right direction
+
+actor Entreprise
+
+rectangle GESTION{
+    usecase "Gérer ses chantiers" as GCH
+    usecase "Modifer date début chantier" as MDD
+    usecase "Modifier date fin chatier" as MDF
+    usecase "Modifer adresse chantier" as MAC
+
+
+    Entreprise --> GCH
+
+    GCH <.. MDD :<<extend>>
+    GCH <.. MDF :<<extend>>
+    GCH <.. MAC :<<extend>>
+
+
+
+
+    usecase "Gérer ses artisans" as GAR
+    usecase "Salaire horaire" as SH
+    usecase "Coordonnées" as TEL
+
+    Entreprise --> GAR
+
+    GAR <.. SH :<<extend>>
+    GAR <.. TEL : <<extend>>
+
+}
+
+
+@enduml
